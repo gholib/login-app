@@ -1,19 +1,27 @@
-import React from "react";
+import { useActions } from "hooks/useActions";
+import { useTypedSelector } from "hooks/useTypedSelector";
+import React, { useState } from "react";
 
-const Pagination = (props: any) => {
+const Pagination = () => {
+  const { totalPage } = useTypedSelector((state) => state.user);
+  const { getUsers } = useActions();
+  const [page, setPage] = useState(1);
+
+  const onChangePage = (p: number) => {
+    getUsers(p);
+    setPage(p);
+  };
   const change = (i: any) => {
-    props.onChange(Number(i));
+    onChangePage(Number(i));
   };
   const getItems = () => {
-    if (props.total > 1) {
+    if (totalPage > 1) {
       const items = [];
-      for (let i = 1; i <= props.total; i++) {
+      for (let i = 1; i <= totalPage; i++) {
         items.push(
           <span key={i} onClick={() => change(i)}>
             <span
-              className={
-                (props.page === i ? "pagination-active " : "") + "underline"
-              }
+              className={(page === i ? "pagination-active " : "") + "underline"}
             >
               {i}
             </span>
@@ -24,15 +32,11 @@ const Pagination = (props: any) => {
         <div className="pagination">
           {items}
           <span
-            onClick={
-              props.page !== props.total
-                ? () => change(props.page + 1)
-                : () => {}
-            }
+            onClick={page !== totalPage ? () => change(page + 1) : () => {}}
           >
             <span
               className={
-                props.page !== props.total ? "underline" : "pagination-disabled"
+                page !== totalPage ? "underline" : "pagination-disabled"
               }
             >
               Next{" "}

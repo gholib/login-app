@@ -25,14 +25,17 @@ class UserRepository
 
         $payload = [
             'id' => $user->id,
-            'username' => $user->user_name,
+            'username' => $user->username,
             'is_active' => $user->is_active
         ];
 
         TokenRepository::generateAccessToken($payload);
 
         if ($rememberMe) {
+            CookieRepository::set('remember', 1, time() + 60 * 60 * 24);
             TokenRepository::generateRefreshToken($payload);
+        } else {
+            CookieRepository::remove(['remember']);
         }
 
         return [

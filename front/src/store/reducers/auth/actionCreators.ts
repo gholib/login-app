@@ -1,7 +1,6 @@
 import {
   AuthActionEnum,
   SetAuthAction,
-  SetErrorAction,
   SetIsLoadingAction,
   SetUserAction
 } from "./types";
@@ -22,13 +21,10 @@ export const AuthActionCreators = {
     type: AuthActionEnum.SET_IS_LOADING,
     payload
   }),
-  setError: (payload: string): SetErrorAction => ({
-    type: AuthActionEnum.SET_ERROR,
-    payload
-  }),
   login:
     (username: string, password: string, remember: boolean) =>
     async (dispatch: AppDispatch) => {
+      dispatch(AuthActionCreators.setIsLoading(true));
       const formData = new FormData();
       formData.append("username", username);
       formData.append("password", password);
@@ -36,7 +32,10 @@ export const AuthActionCreators = {
       try {
         await http.post("/auth", formData);
         dispatch(AuthActionCreators.setIsAuth(true));
-      } catch (error) {}
+      } catch (error) {
+      } finally {
+        dispatch(AuthActionCreators.setIsLoading(false));
+      }
     },
   logout: () => async (dispatch: AppDispatch) => {
     dispatch(AuthActionCreators.setUser({} as IUser));

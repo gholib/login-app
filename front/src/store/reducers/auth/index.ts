@@ -4,14 +4,13 @@ const accessToken = document.cookie.replace(
   /(?:(?:^|.*;\s*)access_token\s*\=\s*([^;]*).*$)|^.*$/,
   "$1"
 );
-const refreshToken = document.cookie.replace(
-  /(?:(?:^|.*;\s*)refresh_token\s*\=\s*([^;]*).*$)|^.*$/,
+const remember = document.cookie.replace(
+  /(?:(?:^|.*;\s*)remember\s*\=\s*([^;]*).*$)|^.*$/,
   "$1"
 );
-console.log("toekn", accessToken, refreshToken);
 
 const initialState: AuthState = {
-  isAuth: Boolean(accessToken || refreshToken),
+  isAuth: Boolean(accessToken || remember),
   error: "",
   isLoading: false,
   user: {} as IUser
@@ -26,8 +25,6 @@ export default function authReducer(
       return { ...state, isAuth: action.payload, isLoading: false };
     case AuthActionEnum.SET_USER:
       return { ...state, user: action.payload };
-    case AuthActionEnum.SET_ERROR:
-      return { ...state, error: action.payload, isLoading: false };
     case AuthActionEnum.SET_IS_LOADING:
       return { ...state, isLoading: action.payload };
     default:
