@@ -1,0 +1,387 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 16px;
+    color: #0d0d0d;
+    background-color: rgb(238, 238, 238);
+}
+
+.login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.login-content {
+    width: 23vw;
+}
+
+h1.title {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+h3.subtitle {
+    font-size: 10px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+/* Stylization of USERNAME & PASSWORD inputs */
+.input {
+    width: 100%;
+    height: 41.31px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.025));
+    border-radius: 70px;
+    background-color: #fff;
+    outline: none;
+    padding: 0px 30px;
+    margin: 10px 0px;
+}
+
+input.username {
+    background-image: url(../public/img/user.svg);
+    background-repeat: no-repeat;
+    background-position: 5px;
+    background-size: 25px;
+}
+
+input.password {
+    background-image: url(../public/img/password.svg);
+    background-repeat: no-repeat;
+    background-position: 5px;
+    background-size: 25px;
+}
+
+.input::placeholder {
+    font-weight: 300;
+    font-size: 12px;
+    letter-spacing: 0.03em;
+    color: #636364;
+}
+
+.input:focus {
+    border: 1px solid rgb(236, 108, 23);
+}
+
+/* END - Stylization of USERNAME & PASSWORD inputs */
+
+/* Castomizing the checkbox */
+.recovery {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+[type="checkbox"] {
+    opacity: 0;
+}
+
+[type="checkbox"]+label {
+    position: relative;
+    padding-left: 6px;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 12px;
+    color: #242424;
+    cursor: pointer;
+}
+
+[type="checkbox"]+label::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: -11px;
+    width: 14px;
+    height: 14px;
+    outline: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    background: #f8f8f8;
+    cursor: pointer;
+}
+
+[type="checkbox"]:checked+label::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: -11px;
+    width: 14px;
+    height: 14px;
+    outline: 1px solid rgb(236, 108, 23);
+    border-radius: 4px;
+    background: #f8f8f8;
+    cursor: pointer;
+}
+
+[type="checkbox"]:checked+label::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: -11px;
+    width: 14px;
+    height: 14px;
+    background-image: url(../public/img/icons8-check-96.png);
+    background-size: contain;
+    border-radius: 4px;
+    cursor: pointer;
+    transform: scale(1);
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+[type="checkbox"]:not(:checked)+label::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: -11px;
+    width: 14px;
+    height: 14px;
+    background-image: url(../public/img/icons8-check-96.png);
+    background-size: contain;
+    border-radius: 4px;
+    cursor: pointer;
+    transform: scale(0);
+    opacity: 0;
+}
+
+/* END castom checkbox */
+
+/* castomization of FORGOT (link)button */
+.forgot a {
+    font-weight: 600;
+    font-size: 12px;
+    color: #242424;
+    text-decoration: none;
+    transition: all 0.5s ease;
+}
+
+.forgot a:hover {
+    font-weight: 700;
+    color: rgb(236, 108, 23);
+}
+
+/* END castomization of FORGOT (link)button */
+
+/* Stylization of SIGN IN button */
+.btn {
+    width: 100%;
+    border-radius: 70px;
+    margin-bottom: 11px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    padding: 10px 10px;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: left;
+    letter-spacing: 0.03em;
+    color: #ffffff;
+    background: rgb(236, 108, 23);
+    box-shadow: 0px 4px 10px rgba(236, 108, 23, 0.25);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    box-shadow: 0px 5px 12px rgba(236, 108, 23, 0.5);
+}
+
+/* END - Stylization of SIGN IN button */
+
+/* OPTIONALLY */
+.login-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 12px;
+    color: #595959;
+}
+
+.login-footer a {
+    text-decoration: none;
+    color: rgb(236, 108, 23);
+    padding-left: 3px;
+    font-weight: 600;
+}
+
+/* Stylization of USER LIST */
+ul {
+    position: relative;
+    width: 50%;
+    margin: 100px auto 0;
+    padding: 10px;
+}
+
+h1.title {
+    font-size: 22px;
+    font-weight: 500;
+    text-align: center;
+    padding: 10px 10px;
+}
+
+.top-line {
+    width: 100%;
+    height: 30px;
+    background-color: rgb(238, 118, 20);
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    margin: 5px 0;
+    transition: 0.5s;
+}
+
+ul li:hover {
+    transform: scale(1.06);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.bcg-white {
+    background: #fff;
+}
+
+.bcg-grey {
+    background: rgb(209, 208, 208);
+}
+
+.user-badge {
+    display: flex;
+    justify-content: center;
+    width: 20%;
+}
+
+.user-badge img {
+    width: 25px;
+}
+
+.user-nikname {
+    font-weight: 600;
+    color: #1b1b1b;
+}
+
+.user-name {
+    font-weight: 400;
+    color: #2b2b2b;
+}
+
+.user-item {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.user-options-menu a {
+    cursor: pointer;
+}
+
+.user-options-menu img {
+    width: 25px;
+    transform: rotate(90deg);
+}
+
+/* END Stylization of USER LIST */
+
+/*Pagination Castomizing*/
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.pagination span .underline {
+    overflow: hidden;
+    text-decoration: none;
+    color: #1b1b1b;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s ease;
+}
+.pagination-disabled{
+    overflow: hidden;
+    text-decoration: none;
+    color: #1b1b1b;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s ease;
+    cursor: not-allowed;
+}
+.pagination span a img {
+    width: 25px;
+    padding-left: 5px;
+}
+
+/* Pagination Underline Animation */
+.underline {
+    display: inline-block;
+    position: relative;
+    color: rgb(238, 118, 20);
+}
+.next-icon{
+    width: 20px;
+    height: 20px;
+}
+.underline:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(238, 118, 20);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.underline:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.pagination-active:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.underline:focus:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
