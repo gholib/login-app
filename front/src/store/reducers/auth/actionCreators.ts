@@ -38,7 +38,13 @@ export const AuthActionCreators = {
       }
     },
   logout: () => async (dispatch: AppDispatch) => {
-    dispatch(AuthActionCreators.setUser({} as IUser));
-    dispatch(AuthActionCreators.setIsAuth(false));
+    dispatch(AuthActionCreators.setIsLoading(true));
+    try {
+      await http.get("/test");
+      dispatch(AuthActionCreators.setIsAuth(false));
+    } catch (error) {
+    } finally {
+      dispatch(AuthActionCreators.setIsLoading(false));
+    }
   }
 };

@@ -23,6 +23,7 @@
 
   "scripts": {
     "serve": "php -S localhost:3001 public/index.php",
-    "db_migrate": "php src/Cli/Migrations/Migration.php"
+    "db_migrate": "php -f src/migration.php",
+    "db_seed": "php -f src/seeder.php"
   }
 }

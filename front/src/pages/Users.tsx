@@ -1,3 +1,4 @@
+import Logout from "components/Logout";
 import Pagination from "components/Pagination";
 import UsersList from "components/UsersList";
 import { useActions } from "hooks/useActions";
@@ -13,6 +14,7 @@ const Users: FC = () => {
     <div className="userlist">
       <UsersList />
       <Pagination />
+      <Logout />
     </div>
   );
 };

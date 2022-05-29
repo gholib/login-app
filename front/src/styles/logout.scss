@@ -1,0 +1,19 @@
+.logout{
+    width: 100vw;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    background-color: rgb(206, 208, 209);
+    display: flex;
+    justify-content: center;
+    button {
+        background-color: rgb(206, 208, 209);
+        border: none;
+        color: #000;
+        cursor: pointer;
+    }
+    svg{
+        margin-top: 16px;
+        margin-right: 3px;
+    }
+}
