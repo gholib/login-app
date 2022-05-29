@@ -1,6 +1,6 @@
 <?php
 const DBDRIVER = 'mysql';
-const DBHOST = 'mysql';
-const DBNAME = 'db';
+const DBHOST = 'localhost';
+const DBNAME = 'login_app';
 const DBUSER = 'root';
-const DBPASS = '';
+const DBPASS = 'root';

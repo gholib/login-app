@@ -14,7 +14,7 @@ class GetUsersAction extends AAction
     public function __invoke(ServerRequestInterface $request): JsonResponse
     {
         $params = $request->getQueryParams();
-        $students = Student::paginate(2, ['*'],'page', $params['page'])
+        $students = Student::paginate(5, ['*'],'page', $params['page'])
             ->toArray();
 
         return $this->JsonResponse($students);

@@ -8,9 +8,12 @@ const UsersList = () => {
     <ul>
       <h1 className="title">User List</h1>
       <div className="top-line"></div>
-      {users?.map((user) => {
+      {users?.map((user, index) => {
         return (
-          <li className="bcg-white" key={user.id}>
+          <li
+            className={(index + 1) % 2 === 0 ? "bcg-grey" : "bcg-white"}
+            key={user.id}
+          >
             <span className="user-badge">
               <img src="img/icons8-check-circle-48.png" alt="Check Icon" />
             </span>

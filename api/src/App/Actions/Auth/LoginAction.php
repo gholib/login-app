@@ -36,7 +36,9 @@ class LoginAction extends AAction
             ]);
         }
         if (empty($res)) {
-            return $this->JsonResponse([], 404, 'Account not found');
+            return $this->JsonResponse([], 422, 'Account not found', [
+                'Account not found'
+            ]);
         }
 
         return $this->JsonResponse($res);

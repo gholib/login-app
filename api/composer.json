@@ -5,9 +5,9 @@
   "require": {
     "php": ">=7.4",
     "firebase/php-jwt": "^6.2",
-    "illuminate/database": "^8.54",
-    "illuminate/pagination": "*",
-    "laminas/laminas-diactoros": "^2.6",
+    "illuminate/database": "^8.83",
+    "illuminate/pagination": "^8.83",
+    "laminas/laminas-diactoros": "^2.11",
     "psr/http-message": "^1.0",
     "roave/security-advisories": "dev-master"
   },
@@ -16,9 +16,6 @@
       "App\\": "src/App/",
       "Core\\": "src/Core/"
     }
-  },
-  "require-dev": {
-    "symfony/var-dumper": "^5.3"
   },
 
   "scripts": {
