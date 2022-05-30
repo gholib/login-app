@@ -37,7 +37,7 @@ Sixes step:
 ```sh
 composer serve
 ```
-Api will run  localhost:3001
+Api will run in localhost:3001
 ## Deploy fronted
 
 App requires [nodejs >=16.1] & [npm latest]
@@ -60,4 +60,4 @@ Third step:
 yarn start (or npm run start)
 ```
 
-Front will run localhost:3000
+Front will run in localhost:3000
