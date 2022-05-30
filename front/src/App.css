@@ -233,8 +233,10 @@ ul {
 h1.title {
     font-size: 22px;
     font-weight: 500;
+}
+
+.text-center{
     text-align: center;
-    padding: 10px 10px;
 }
 
 .top-line {
@@ -328,6 +330,7 @@ ul li:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
     transition: all 1s ease;
 }
 .pagination-disabled{

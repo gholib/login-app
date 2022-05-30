@@ -13,7 +13,7 @@ class LogoutAction extends AAction
 {
     public function __invoke(ServerRequestInterface $request): JsonResponse
     {
-        CookieRepository::remove(['access_token', 'refresh_token']);
+        CookieRepository::remove(['access_token', 'refresh_token', 'remember']);
         return $this->JsonResponse([]);
     }
 }

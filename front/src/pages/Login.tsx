@@ -15,8 +15,10 @@ const Login: FC = () => {
       <div>
         <div className="login-content">
           <img className="logo" src="img/Logo.svg" alt="Logo" />
-          <h1 className="title">Welcome to the Learning Management System</h1>
-          <h3 className="subtitle">Please log in to continue</h3>
+          <div>
+            <h1 className="title">Welcome to the Learning Management System</h1>
+            <h3 className="subtitle">Please log in to continue</h3>
+          </div>
           <div className="username-input">
             <input
               className="input username"
@@ -47,7 +49,7 @@ const Login: FC = () => {
             </div>
           </div>
           <button onClick={submit} className="btn btn-primary">
-            Sign in
+            Log in
           </button>
         </div>
       </div>

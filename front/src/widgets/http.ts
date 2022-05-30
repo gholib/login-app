@@ -24,7 +24,7 @@ const http = axios.create({
     "Content-Type": "application/json",
     Accept: "application/json"
   },
-  baseURL: "http://localhost:3001" //process.env.API_URL
+  baseURL: process.env.API_URL ?? "http://localhost:3001"
 });
 
 http.interceptors.response.use(

@@ -6,7 +6,7 @@ const UsersList = () => {
 
   return (
     <ul>
-      <h1 className="title">User List</h1>
+      <h1 className="text-center title">User List</h1>
       <div className="top-line"></div>
       {users?.map((user, index) => {
         return (

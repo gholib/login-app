@@ -40,7 +40,7 @@ export const AuthActionCreators = {
   logout: () => async (dispatch: AppDispatch) => {
     dispatch(AuthActionCreators.setIsLoading(true));
     try {
-      await http.get("/test");
+      await http.delete("/auth");
       dispatch(AuthActionCreators.setIsAuth(false));
     } catch (error) {
     } finally {
