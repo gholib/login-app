@@ -25,10 +25,11 @@ class ResponseSender
 
     private function cors()
     {
-        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Origin: " . CLIENT_URL);
         header("Access-Control-Allow-Headers: *");
         header('Access-Control-Allow-Credentials: true');
         header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
         header('Access-Control-Max-Age: 86400');
+        header('Accept: application/json');
     }
 }
