@@ -33,7 +33,7 @@ class RouteCollection
 
     public function delete($name, $pattern, $handler, array $tokens = [])
     {
-        $r = new RegexRoute($name, $pattern, $handler, ['DELETE'], $tokens);
+        $r = new RegexRoute($name, $pattern, $handler, ['DELETE', 'OPTIONS'], $tokens);
         $this->addRoute($r);
         return $r;
     }
